@@ -1,6 +1,7 @@
 export * from './course.interface';
 export * from './delivery.interface';
 export * from './feedback.interface';
+export * from './index';
 export * from './report.interface';
 export * from './slogan.interface';
 export * from './sloganCorrection.interface';
