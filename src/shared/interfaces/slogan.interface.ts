@@ -1,8 +1,9 @@
+import { SloganCorrection } from "./sloganCorrection.interface";
 
 interface Slogan {
   title: string;
   description: string;
-  slogans: string[];
+  slogans: SloganCorrection[];
 }
 
 export { Slogan }

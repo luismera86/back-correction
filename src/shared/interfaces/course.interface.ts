@@ -1,6 +1,7 @@
+import { Document } from "mongoose";
 import { Delivery } from "./delivery.interface";
 
-interface Course {
+interface Course extends Document{
   name: string;
   deliveries: Delivery[];
 }

@@ -14,6 +14,12 @@ const deliverySchema = new Schema<Delivery>({
   }],
 });
 
+deliverySchema.pre("findOne", function (next) {
+  this.populate("slogan");
+  this.populate("slogans");
+  next();
+});
+
 const deliveryModel = model<Delivery>("Delivery", deliverySchema);
 
 export { deliveryModel };

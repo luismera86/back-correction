@@ -14,7 +14,7 @@ const courseSchema = new Schema<Course>({
 });
 
 
-courseSchema.pre<Course>("findOne", function (next) {
+courseSchema.pre("findOne", function (next) {
   this.populate("deliveries");
   next();
 });

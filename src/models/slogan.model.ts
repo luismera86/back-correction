@@ -11,7 +11,11 @@ const sloganSchema = new Schema<Slogan>({
     required: true,
   },
   slogans: {
-    type: [String],
+    type: [{
+      type: Schema.Types.ObjectId,
+      ref: "SloganCorrection",
+      required: true,
+    }],
     required: true,
   },
 });

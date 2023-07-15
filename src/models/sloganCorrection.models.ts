@@ -13,11 +13,11 @@ const sloganCorrectionSchema = new Schema<SloganCorrection>({
   },
   status: {
     type: String,
+    enum: [sloganStatus.realized, sloganStatus.incomplete, sloganStatus.notRealized],
     required: true,
   },
   comment: {
     type: String,
-    enum: [sloganStatus.realized, sloganStatus.incomplete, sloganStatus.notRealized],
     required: true,
   },
 });
