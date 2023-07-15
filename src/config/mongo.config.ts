@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const mongoDbConnection = () => {
+const mongoDbConnection = async () => {
   try {
-    mongoose.createConnection("mongodb://127.0.0.1:27017/bc-test");
+    await mongoose.connect("mongodb://127.0.0.1:27017/bc-test");
     console.log("MongoDB connected");
   } catch (error) {
     console.log(error);
