@@ -23,8 +23,8 @@ const getOneController = async (req: Request, res: Response) => {
 const createController = async (req: Request, res: Response) => {
   try {
     const course = req.body;
-    await createService(course);
-    res.status(201).json(course);
+    const newCourse = await createService(course);
+    res.status(201).json(newCourse);
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
@@ -34,8 +34,8 @@ const updateController = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const course = req.body;
-    await updateService(id, course);
-    res.status(200).json(course);
+    const updateCourse = await updateService(id, course);
+    res.status(200).json(updateCourse);
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }

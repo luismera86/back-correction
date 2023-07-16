@@ -7,16 +7,10 @@ const deliverySchema = new Schema<Delivery>({
     ref: "Slogan",
     required: true,
   },
-  slogans: [{
-    type: Schema.Types.ObjectId,
-    ref: "SloganCorrection",
-    required: true,
-  }],
 });
 
 deliverySchema.pre("findOne", function (next) {
   this.populate("slogan");
-  this.populate("slogans");
   next();
 });
 
